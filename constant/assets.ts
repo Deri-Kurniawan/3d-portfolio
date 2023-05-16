@@ -1,0 +1,50 @@
+export const assets = {
+  home: {
+    hero: {
+      avatarSmile: require("@/assets/images/home/hero/avatar-smile.png"),
+      dribble: require("@/assets/images/home/hero/dribble.png"),
+      github: require("@/assets/images/home/hero/github.png"),
+      instagram: require("@/assets/images/home/hero/instagram.png"),
+      linkedin: require("@/assets/images/home/hero/linkedin.png"),
+      quadrilateral: require("@/assets/images/home/hero/quadrilateral.png"),
+      triangle: require("@/assets/images/home/hero/triangle.png"),
+      twistedTorus: require("@/assets/images/home/hero/twisted-torus.png"),
+      zigZag: require("@/assets/images/home/hero/zig-zag.png"),
+    },
+    letsConnect: {
+      avatarBigSmile: require("@/assets/images/home/letsConnect/avatar-big-smile.png"),
+      dribble: require("@/assets/images/home/letsConnect/dribble.png"),
+      github: require("@/assets/images/home/letsConnect/github.png"),
+      gmail: require("@/assets/images/home/letsConnect/gmail.png"),
+      instagram: require("@/assets/images/home/letsConnect/instagram.png"),
+      linkedin: require("@/assets/images/home/letsConnect/linkedin.png"),
+    },
+    myLatestProject: {
+      figma: require("@/assets/images/home/myLatestProject/figma.png"),
+      rocket: require("@/assets/images/home/myLatestProject/rocket.png"),
+      suitcase: require("@/assets/images/home/myLatestProject/suitcase.png"),
+      projects: {
+        portfolioWebsite: require("@/assets/images/home/myLatestProject/projects/portfolio-website.png"),
+      },
+    },
+    quote: {
+      bulb: require("@/assets/images/home/quote/bulb.png"),
+      heart: require("@/assets/images/home/quote/heart.png"),
+      paintKit: require("@/assets/images/home/quote/paint-kit.png"),
+      teaCup: require("@/assets/images/home/quote/tea-cup.png"),
+    },
+    technologyStack: {
+      expo: require("@/assets/images/home/technologyStack/expo.png"),
+      expressJs: require("@/assets/images/home/technologyStack/express-js.png"),
+      javascript: require("@/assets/images/home/technologyStack/javascript.png"),
+      laravel: require("@/assets/images/home/technologyStack/laravel.png"),
+      nextJs: require("@/assets/images/home/technologyStack/next-js.png"),
+      planetScale: require("@/assets/images/home/technologyStack/planet-scale.png"),
+      prisma: require("@/assets/images/home/technologyStack/prisma.png"),
+      reactJs: require("@/assets/images/home/technologyStack/react-js.png"),
+      reactNative: require("@/assets/images/home/technologyStack/react-native.png"),
+      tailwindCss: require("@/assets/images/home/technologyStack/tailwindcss.png"),
+      typescript: require("@/assets/images/home/technologyStack/typescript.png"),
+    },
+  },
+};
