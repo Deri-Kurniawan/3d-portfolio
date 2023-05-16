@@ -3,11 +3,30 @@
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import BrandIcon from './BrandIcon';
+import { usePathname } from 'next/navigation';
+
+const navlinks = [
+    {
+        name: "Home",
+        href: "/",
+    },
+    {
+        name: "Project",
+        href: "/project",
+    },
+    {
+        name: "Blog",
+        href: "/blog",
+    },
+];
 
 export default function Navbar(): JSX.Element {
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
     const triggerMenuRef = React.useRef<HTMLInputElement>(null);
     const navbarRef = React.useRef<HTMLDivElement>(null);
+
+    const pathname = usePathname();
+
 
     const toggleMenu = (): void => {
         setIsMenuOpen((prev) => !prev);
@@ -56,15 +75,18 @@ export default function Navbar(): JSX.Element {
                     {/* desktop */}
                     <div className='flex-row items-center justify-between hidden text-lg font-bold md:flex md:gap-6 lg:gap-8'>
                         <ul className='flex flex-row md:gap-6 lg:gap-8 justify-evenly'>
-                            <li>
-                                <Link className='p-4 text-accent' href="/">Home</Link>
-                            </li>
-                            <li>
-                                <Link className='p-4 text-accent2' href="/project">Project</Link>
-                            </li>
-                            <li>
-                                <Link className='p-4 text-accent2' href="/blog">Blog</Link>
-                            </li>
+                            {navlinks.map((link, index) => (
+                                <li key={index}>
+                                    <Link
+                                        className={`${pathname === link.href ? 'text-accent' : 'text-accent2'
+                                            } p-4`}
+                                        href={link.href}
+                                    >
+                                        {link.name}
+                                    </Link>
+                                </li>
+                            ))}
+
                         </ul>
                         <a className='px-6 py-2 text-white gradient-btn rounded-xl' href="/" download="Deri Kurniawan Resume">Resume</a>
                     </div>
@@ -88,15 +110,18 @@ export default function Navbar(): JSX.Element {
             >
                 <div className='flex flex-col items-center justify-between p-4 text-lg font-medium lg:hidden lg:gap-8'>
                     <ul className='flex flex-col text-4xl font-bold text-center lg:gap-8 justify-evenly text-accent2'>
-                        <li className='flex w-screen'>
-                            <Link className='flex-1 py-4 text-center text-accent' href="/" onClick={closeMenu}>Home</Link>
-                        </li>
-                        <li className='flex w-screen'>
-                            <Link className='flex-1 py-4' href="/project" onClick={closeMenu}>Project</Link>
-                        </li>
-                        <li className='flex w-screen'>
-                            <Link className='flex-1 py-4' href="/blog" onClick={closeMenu}>Blog</Link>
-                        </li>
+                        {navlinks.map((link, index) => (
+                            <li key={index} className='flex w-screen'>
+                                <Link
+                                    className={`flex-1 py-4 ${pathname === link.href ? 'text-accent' : ''}`}
+                                    href={link.href}
+                                    onClick={closeMenu}
+                                >
+                                    {link.name}
+                                </Link>
+                            </li>
+                        ))}
+
                     </ul>
                     <a className='px-12 py-4 my-4 text-4xl font-bold text-white gradient-btn rounded-xl' href="/" download="Deri Kurniawan Resume">Resume</a>
                 </div>
