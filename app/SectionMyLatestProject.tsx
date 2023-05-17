@@ -56,12 +56,13 @@ const tabs = [
             },
         ],
     },
-    {
-        name: 'More',
-        image: assets.home.myLatestProject.rocket,
-        data: []
-    }
 ];
+
+tabs.push({
+    name: 'More',
+    image: assets.home.myLatestProject.rocket,
+    data: []
+});
 
 export default function SectionMyLatestProject() {
     const [activeTab, setActiveTab] = useState(0);

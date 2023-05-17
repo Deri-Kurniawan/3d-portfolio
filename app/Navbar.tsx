@@ -67,12 +67,11 @@ export default function Navbar(): JSX.Element {
             <nav className={`sticky top-0 z-50 w-screen bg-white md:relative safe-layout`} ref={navbarRef}>
                 <div className='flex flex-row items-center justify-between py-6 border-b-2 border-b-gray safe-x-padding'>
                     <Link className='z-50' href="/" onClick={closeMenu} prefetch={false}>
-                        {/* <Image className="w-[32px] h-[40px] lg:w-[42px] lg:h-[50px]" src={assets.brands.transparent} width={42} height={50} alt="" /> */}
                         <div className="w-[32px] h-[40px] lg:w-[42px] lg:h-[50px]">
                             <BrandIcon />
                         </div>
                     </Link>
-                    {/* desktop */}
+                    {/* desktop menu */}
                     <div className='flex-row items-center justify-between hidden text-lg font-bold md:flex md:gap-6 lg:gap-8'>
                         <ul className='flex flex-row md:gap-6 lg:gap-8 justify-evenly'>
                             {navlinks.map((link, index) => (
@@ -90,8 +89,7 @@ export default function Navbar(): JSX.Element {
                         </ul>
                         <a className='px-6 py-2 text-white gradient-btn rounded-xl' href="/" download="Deri Kurniawan Resume">Resume</a>
                     </div>
-                    {/* tablet */}
-                    {/* hamburger menu */}
+                    {/* mobile hamburger menu */}
                     <div className="z-50 md:hidden">
                         <label className="cursor-pointer hamburger">
                             <input className='hidden' type="checkbox" ref={triggerMenuRef} onClick={toggleMenu} />
@@ -103,7 +101,7 @@ export default function Navbar(): JSX.Element {
                     </div>
                 </div>
             </nav>
-            {/* tablet menu */}
+            {/* mobile menu */}
             <div
                 className={`${isMenuOpen ? "top-0" : "-translate-y-full"} fixed top-0 w-screen h-screen transition-all duration-500 ease-in-out z-40 bg-white`}
                 style={{ paddingTop: navbarRef.current ? `${navbarRef.current.offsetHeight}px` : '90px' }}
