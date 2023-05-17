@@ -155,6 +155,12 @@ export default function SectionMyLatestProject() {
                                                 transition={{ duration: 0.5 }}
                                                 whileHover={{ scale: 1.05 }}
                                                 whileTap={{ scale: 0.95 }}
+                                                onClick={() => {
+                                                    if (window.innerWidth < 1024) {
+                                                        router.push(`/project/${item.slug}`);
+                                                        return;
+                                                    }
+                                                }}
                                             >
                                                 <div className="col-span-6">
                                                     <motion.div
@@ -173,7 +179,7 @@ export default function SectionMyLatestProject() {
                                                         />
                                                     </motion.div>
                                                 </div>
-                                                <div className="absolute top-0 left-0 flex flex-col items-center justify-center w-full h-full transition-opacity duration-300 opacity-0 bg-gray/10 backdrop-blur-sm rounded-2xl hover:opacity-100 gap-y-2">
+                                                <div className="absolute top-0 left-0 flex flex-col items-center justify-center w-full h-full transition-opacity duration-300 opacity-0 select-none active:opacity-100 bg-gray/10 backdrop-blur-sm rounded-2xl hover:opacity-100 gap-y-2 lg:select-auto">
                                                     <p className="p-8 text-xl font-bold text-center transition-all duration-150 ease-in-out line-clamp-1">{item.name}</p>
                                                     <div className='flex flex-row gap-4 text-3xl'>
                                                         {item.repositoryUrl && (
