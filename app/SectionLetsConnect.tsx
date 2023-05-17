@@ -52,7 +52,7 @@ export default function SectionLetsConnect() {
             width: 168,
             height: 168,
             tabIndex: 0,
-            onClick: () => window.open('https://dribbble.com/deri-kurniawan', '_blank')
+            onClick: () => window.open('https://github.com/deri-kurniawan', '_blank')
         },
         {
             initial: { y: -50, opacity: 0 },
@@ -65,7 +65,7 @@ export default function SectionLetsConnect() {
             width: 168,
             height: 168,
             tabIndex: 0,
-            onClick: () => window.open('https://github.com/deri-kurniawan', '_blank')
+            onClick: () => window.open('https://dribbble.com/deri-kurniawan', '_blank')
         },
         {
             initial: { y: 100, opacity: 0 },
