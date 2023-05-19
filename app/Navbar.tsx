@@ -4,6 +4,7 @@ import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import BrandIcon from './BrandIcon';
 import { usePathname } from 'next/navigation';
+import Banner from './Banner';
 
 const navlinks = [
     {
@@ -65,6 +66,7 @@ export default function Navbar(): JSX.Element {
     return (
         <>
             <nav className={`sticky top-0 z-50 w-screen bg-white md:relative safe-layout`} ref={navbarRef}>
+                <Banner />
                 <div className='flex flex-row items-center justify-between py-6 border-b-2 border-b-gray safe-x-padding'>
                     <Link className='z-50' href="/" onClick={closeMenu} prefetch={false}>
                         <div className="w-[32px] h-[40px] lg:w-[42px] lg:h-[50px]">
