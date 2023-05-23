@@ -134,8 +134,8 @@ export default function SectionMyLatestProject() {
                                     height={100}
                                     style={{ height: 'auto' }}
                                 />
-                                <div className="absolute bg-gray/10 backdrop-blur-sm rounded-[25px] top-0 left-0 w-full h-full flex justify-center items-center opacity-0 hover:opacity-100 transition-opacity duration-300">
-                                    <p className={`${activeTab === index ? 'text-white' : 'text-accent'} font-bold transition-all duration-300 ease-in-out`}>{tab.name}</p>
+                                <div className="absolute bg-gray/10 backdrop-blur-sm rounded-[25px] top-0 left-0 w-full h-full flex justify-center items-center opacity-0 hover:opacity-100 transition-opacity duration-300 md:text-2xl">
+                                    <p className={`${activeTab === index ? 'text-white' : 'text-accent'} font-bold transition-all duration-150 ease-in-out`}>{tab.name}</p>
                                 </div>
                             </motion.button>
 
@@ -179,7 +179,7 @@ export default function SectionMyLatestProject() {
                                                         />
                                                     </motion.div>
                                                 </div>
-                                                <div className="absolute top-0 left-0 flex flex-col items-center justify-center w-full h-full transition-opacity duration-300 opacity-0 select-none active:opacity-100 bg-gray/10 backdrop-blur-sm rounded-2xl hover:opacity-100 gap-y-2 lg:select-auto">
+                                                <div className="absolute top-0 left-0 flex flex-col items-center justify-center w-full h-full duration-300 opacity-0 select-none active:opacity-100 bg-gray/10 backdrop-blur-sm rounded-2xl hover:opacity-100 gap-y-2 lg:select-auto">
                                                     <p className="p-8 text-xl font-bold text-center transition-all duration-150 ease-in-out line-clamp-1">{item.name}</p>
                                                     <div className='flex flex-row gap-4 text-3xl'>
                                                         {item.repositoryUrl && (
