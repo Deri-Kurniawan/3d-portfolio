@@ -112,7 +112,7 @@ export default function SectionMyLatestProject() {
                         {tabs.map((tab, index) => (
                             <motion.button
                                 key={index.toString()}
-                                className={`relative ${activeTab === index ? 'gradient-bg' : 'bg-white'} w-[75px] h-[75px] md:w-[150px] md:h-[150px] rounded-[25px] flex justify-center items-center shadow-2xl`}
+                                className={`relative ${activeTab === index ? 'gradient-bg' : 'bg-white'} w-[75px] h-[75px] md:w-[150px] md:h-[150px] rounded-[25px] flex justify-center items-center shadow-2xl overflow-hidden`}
                                 initial={{ opacity: 0, y: 50 }}
                                 animate={inView ? { opacity: 1, y: 0 } : {}}
                                 transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
@@ -135,7 +135,7 @@ export default function SectionMyLatestProject() {
                                     style={{ height: 'auto' }}
                                 />
                                 <div className="absolute bg-gray/10 backdrop-blur-sm rounded-[25px] top-0 left-0 w-full h-full flex justify-center items-center opacity-0 hover:opacity-100 transition-opacity duration-300 md:text-2xl">
-                                    <p className={`${activeTab === index ? 'text-white' : 'text-accent'} font-bold transition-all duration-150 ease-in-out`}>{tab.name}</p>
+                                    <p className={`${activeTab === index ? 'text-white' : 'text-accent'} font-bold transition-colors duration-75 ease-in-out`}>{tab.name}</p>
                                 </div>
                             </motion.button>
 
@@ -149,18 +149,12 @@ export default function SectionMyLatestProject() {
                                         activeTab === tabIndex && (
                                             <motion.div
                                                 key={dataIndex.toString()}
-                                                className={`col-span-12 xl:col-span-6`}
+                                                className="relative col-span-12 overflow-hidden group xl:col-span-6"
                                                 initial={{ opacity: 0, x: -50 }}
                                                 animate={inView ? { opacity: 1, x: 0 } : {}}
                                                 transition={{ duration: 0.5 }}
                                                 whileHover={{ scale: 1.05 }}
                                                 whileTap={{ scale: 0.95 }}
-                                                onClick={() => {
-                                                    if (window.innerWidth < 1024) {
-                                                        router.push(`/project/${item.slug}`);
-                                                        return;
-                                                    }
-                                                }}
                                             >
                                                 <div className="col-span-6">
                                                     <motion.div
@@ -179,26 +173,28 @@ export default function SectionMyLatestProject() {
                                                         />
                                                     </motion.div>
                                                 </div>
-                                                <div className="absolute top-0 left-0 flex flex-col items-center justify-center w-full h-full duration-300 opacity-0 select-none active:opacity-100 bg-gray/10 backdrop-blur-sm rounded-2xl hover:opacity-100 gap-y-2 lg:select-auto">
-                                                    <p className="p-8 text-xl font-bold text-center transition-all duration-150 ease-in-out line-clamp-1">{item.name}</p>
-                                                    <div className='flex flex-row gap-4 text-3xl'>
-                                                        {item.repositoryUrl && (
-                                                            <Link className="p-4 transition-all duration-300 ease-in-out bg-gray rounded-2xl hover:text-white hover:bg-gradient-to-r hover:from-primary hover:to-secondary" href={item.repositoryUrl} target='_blank' title="Repository">
-                                                                {tabs[activeTab].name.toLowerCase() === "project" ? (
-                                                                    <BsGithub />
-                                                                ) : (
-                                                                    <FiFigma />
-                                                                )}
+                                                <div className='absolute top-0 bottom-0 left-0 right-0 hidden transition-all duration-300 gap-y-2 group-hover:block bg-gray/10 backdrop-blur-sm rounded-2xl'>
+                                                    <div className='flex flex-col items-center justify-center w-full h-full select-none lg:select-auto'>
+                                                        <p className="p-8 text-xl font-bold text-center transition-all duration-150 ease-in-out line-clamp-1">{item.name}</p>
+                                                        <div className='flex flex-row gap-4 text-3xl'>
+                                                            {item.repositoryUrl && (
+                                                                <Link className="p-4 transition-all duration-150 ease-in-out bg-gray rounded-2xl hover:text-white hover:bg-gradient-to-r hover:from-primary hover:to-secondary" href={item.repositoryUrl} target='_blank' title="Repository">
+                                                                    {tabs[activeTab].name.toLowerCase() === "project" ? (
+                                                                        <BsGithub />
+                                                                    ) : (
+                                                                        <FiFigma />
+                                                                    )}
+                                                                </Link>
+                                                            )}
+                                                            {item.demoUrl && (
+                                                                <Link className="p-4 transition-all duration-300 ease-in-out bg-gray rounded-2xl hover:text-white hover:bg-gradient-to-r hover:from-primary hover:to-secondary" href={item.demoUrl} target='_blank' title="Demo">
+                                                                    <IoMdOpen />
+                                                                </Link>
+                                                            )}
+                                                            <Link className="p-4 transition-all duration-300 ease-in-out bg-gray rounded-2xl hover:text-white hover:bg-gradient-to-r hover:from-primary hover:to-secondary" href={`/project/${item.slug}`} title={`Detail of ${item.name}`}>
+                                                                <BsInfoCircle />
                                                             </Link>
-                                                        )}
-                                                        {item.demoUrl && (
-                                                            <Link className="p-4 transition-all duration-300 ease-in-out bg-gray rounded-2xl hover:text-white hover:bg-gradient-to-r hover:from-primary hover:to-secondary" href={item.demoUrl} target='_blank' title="Demo">
-                                                                <IoMdOpen />
-                                                            </Link>
-                                                        )}
-                                                        <Link className="p-4 transition-all duration-300 ease-in-out bg-gray rounded-2xl hover:text-white hover:bg-gradient-to-r hover:from-primary hover:to-secondary" href={`/project/${item.slug}`} title={`Detail of ${item.name}`}>
-                                                            <BsInfoCircle />
-                                                        </Link>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </motion.div>
