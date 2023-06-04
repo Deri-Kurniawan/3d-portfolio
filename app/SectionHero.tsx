@@ -2,7 +2,6 @@
 
 import { assets } from '@/constant/assets'
 import Image from 'next/image'
-import React from 'react'
 import { MotionProps, motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer';
 
@@ -66,7 +65,7 @@ export default function SectionHero(): JSX.Element {
     ];
 
     return (
-        <section ref={ref} className='safe-x-padding mt-10 mb-[172px]' aria-label='Section Hero'>
+        <section ref={ref} className='safe-x-padding mt-10 mb-[172px]' aria-label='Hero Section'>
             <div className='grid grid-flow-row gap-10 xl:grid-cols-2 xl:grid-flow-col xl:gap-0'>
                 {/* first */}
                 <div className='flex flex-col items-center justify-center order-2 xl:items-start xl:order-1'>
@@ -74,7 +73,7 @@ export default function SectionHero(): JSX.Element {
                         initial={{ y: 100, opacity: 0 }}
                         animate={inView ? { y: 0, opacity: 1 } : {}}
                         transition={{ duration: 0.5 }}
-                        className='font-montserrat font-bold text-[1.8em] lg:text-[2em] text-accent mb-3 text-center xl:text-left'
+                        className='font-montserrat font-bold text-2xl md:text-[28px] lg:text-[32px] text-accent mb-3 text-center xl:text-left'
                         aria-label="Welcome to Deri's Portfolio"
                     >
                         Welcome to Deri&apos;s Portfolio
@@ -83,7 +82,7 @@ export default function SectionHero(): JSX.Element {
                         initial={{ y: 100, opacity: 0 }}
                         animate={inView ? { y: 0, opacity: 1 } : {}}
                         transition={{ duration: 0.7 }}
-                        className='font-montserrat font-extrabold text-[4em] leading-[56px] lg:text-[4.2em] lg:leading-[88px] gradient-text mb-6 text-center xl:text-left'
+                        className='font-montserrat font-extrabold text-5xl md:text-[64px] md:leading-[56px] lg:text-[66px] lg:leading-[88px] gradient-text mb-6 text-center xl:text-left'
                         aria-label="Full Stack Web Developer"
                     >
                         Full Stack Web Developer
@@ -92,7 +91,7 @@ export default function SectionHero(): JSX.Element {
                         initial={{ y: 100, opacity: 0 }}
                         animate={inView ? { y: 0, opacity: 1 } : {}}
                         transition={{ duration: 0.9 }}
-                        className='text-xl font-medium text-center lg:text-2xl text-accent xl:text-left'
+                        className='text-base font-medium text-center md:text-xl lg:text-2xl text-accent xl:text-left'
                         aria-label="I'm Deri Kurniawan. A passionate Full Stack Web Developer based in Sukabumi Regency, West Java, Indonesia."
                     >
                         I&apos;m Deri Kurniawan. A passionate Full Stack Web Developer based in Sukabumi Regency, West Java, Indonesia.
@@ -106,11 +105,11 @@ export default function SectionHero(): JSX.Element {
                                 initial={{ opacity: 0, scale: 0 }}
                                 animate={inView ? { opacity: 1, scale: 1 } : {}}
                                 transition={{ duration: 0.8 }}
-                                className='relative w-[20.625em] h-[20.625em] lg:w-[30em] lg:h-[30em] bg-gray rounded-3xl overflow-clip'
+                                className='relative w-[280px] h-[280px] md:w-[330px] md:h-[330px] lg:w-[480px] lg:h-[480px] bg-gray rounded-3xl overflow-clip'
                                 aria-hidden={!inView}
                             >
                                 <AnimatedImage
-                                    className='w-[20.625em] h-[20.625em] lg:w-[30em] lg:h-[30em] absolute top-0 bottom-0 left-0 right-0'
+                                    className='w-[280px] h-[280px] md:w-[330px] md:h-[330px] lg:w-[480px] lg:h-[480px] absolute top-0 bottom-0 left-0 right-0'
                                     src={assets.home.hero.avatarSmile}
                                     width={480}
                                     height={480}

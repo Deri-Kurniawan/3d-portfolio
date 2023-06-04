@@ -6,6 +6,7 @@ import { useInView } from 'react-intersection-observer';
 import Image from 'next/image';
 import { assets } from '@/constant/assets';
 import { suarte } from '@/constant/font';
+import styles from "./home.module.css";
 
 const AnimatedImage = motion(Image);
 
@@ -59,9 +60,9 @@ export default function SectionQuote() {
     ];
 
     return (
-        <div className='safe-x-padding mt-[10.75em] mb-[10.75em]' ref={ref}>
+        <section ref={ref} className={`safe-x-padding ${styles.sectionDistance}`} aria-label='Quote Section'>
             <div className='relative'>
-                <motion.p initial={{ y: 100, opacity: 0 }} animate={inView ? { y: 0, opacity: 1 } : {}} transition={{ duration: 0.5 }} className='font-medium text-xl leading-[38px] lg:text-2xl text-accent max-w-[933px] mx-auto text-justify'>
+                <motion.p initial={{ y: 100, opacity: 0 }} animate={inView ? { y: 0, opacity: 1 } : {}} transition={{ duration: 0.5 }} className={styles.creatorQuotes}>
                     This portfolio was made with heart and soul, pouring passion and creativity into every detail to bring it to life. It&apos;s not just a portfolio, it&apos;s a labor of love.
                 </motion.p>
 
@@ -69,9 +70,9 @@ export default function SectionQuote() {
                     <AnimatedImage key={index.toString()} {...item} />
                 ))}
             </div>
-            <motion.p initial={{ y: 100, opacity: 0 }} animate={inView ? { y: 0, opacity: 1 } : {}} transition={{ duration: 0.5, delay: 0.5 }} className='font-medium text-6xl lg:text-7xl text-accent text-center mt-[20px]' style={suarte.style}>
+            <motion.p initial={{ y: 100, opacity: 0 }} animate={inView ? { y: 0, opacity: 1 } : {}} transition={{ duration: 0.5, delay: 0.5 }} className={styles.creatorQuotesName} style={suarte.style}>
                 Deri kurniawan
             </motion.p>
-        </div >
+        </section >
     )
 }
