@@ -109,11 +109,11 @@ export default function SectionMyLatestProject() {
             </div>
             <div className='mt-[50px] h-full'>
                 <div className='flex flex-col items-center justify-center md:items-start md:flex-row gap-9'>
-                    <div className='flex flex-row md:flex-col bg-gray p-[26px] rounded-[25px] gap-x-[26px] md:gap-x-0 gap-y-[26px]'>
+                    <div className='flex flex-row md:flex-col bg-gray p-3 md:p-[26px] rounded-2xl md:rounded-[25px] gap-x-3 md:gap-x-0 gap-y-[26px]'>
                         {tabs.map((tab, index) => (
                             <motion.button
                                 key={index.toString()}
-                                className={`relative ${activeTab === index ? 'gradient-bg' : 'bg-white'} w-[75px] h-[75px] md:w-[150px] md:h-[150px] rounded-[25px] flex justify-center items-center shadow-2xl overflow-hidden`}
+                                className={`relative ${activeTab === index ? 'gradient-bg' : 'bg-white'} w-[75px] h-[75px] md:w-[150px] md:h-[150px] rounded-2xl md:rounded-[25px] flex justify-center items-center shadow-xl overflow-hidden`}
                                 initial={{ opacity: 0, y: 50 }}
                                 animate={inView ? { opacity: 1, y: 0 } : {}}
                                 transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
@@ -135,7 +135,7 @@ export default function SectionMyLatestProject() {
                                     height={100}
                                     style={{ height: 'auto' }}
                                 />
-                                <div className="absolute bg-gray/10 backdrop-blur-sm rounded-[25px] top-0 left-0 w-full h-full flex justify-center items-center opacity-0 hover:opacity-100 transition-opacity duration-300 md:text-2xl">
+                                <div className="absolute top-0 left-0 flex items-center justify-center w-full h-full transition-opacity duration-300 opacity-0 bg-gray/10 backdrop-blur-sm rounded-2xl md:rounded-[25px] hover:opacity-100 md:text-2xl">
                                     <p className={`${activeTab === index ? 'text-white' : 'text-accent'} font-bold transition-colors duration-75 ease-in-out`}>{tab.name}</p>
                                 </div>
                             </motion.button>
@@ -159,7 +159,7 @@ export default function SectionMyLatestProject() {
                                             >
                                                 <div className="col-span-6">
                                                     <motion.div
-                                                        className="bg-white shadow-lg p-[26px] rounded-2xl h-[261px] overflow-hidden"
+                                                        className="bg-white p-[26px] rounded-2xl md:rounded-[25px] h-[261px] overflow-hidden"
                                                         initial={{ opacity: 0, x: -50 }}
                                                         animate={inView ? { opacity: 1, x: 0 } : {}}
                                                         transition={{ duration: 0.5, delay: 0.2 + dataIndex * 0.1 }}
