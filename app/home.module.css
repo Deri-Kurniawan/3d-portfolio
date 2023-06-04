@@ -1,5 +1,11 @@
+/* Components */
+.__gradientText {
+  @apply text-transparent bg-gradient-to-r from-primary to-secondary bg-clip-text;
+}
+/* End of components */
+
 .sectionTitle {
-  @apply mb-6 text-4xl font-extrabold md:text-5xl lg:text-6xl font-montserrat gradient-text;
+  @apply mb-6 text-4xl font-extrabold md:text-5xl lg:text-6xl font-montserrat __gradientText;
 }
 
 .sectionDescription {
