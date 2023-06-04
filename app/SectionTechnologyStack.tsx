@@ -6,6 +6,7 @@ import React from 'react'
 import { motion } from "framer-motion";
 import { useInView } from 'react-intersection-observer';
 import Link from 'next/link';
+import styles from "./home.module.css";
 
 const technologyStack = [
     {
@@ -72,17 +73,17 @@ export default function SectionTechnologyStack() {
     });
 
     return (
-        <div className='safe-x-padding mt-[10.75em] mb-[10.75em]' ref={ref}>
+        <section ref={ref} className={`safe-x-padding ${styles.sectionDistance}`}>
             <div className='text-center'>
-                <motion.h2 initial={{ y: 100, opacity: 0 }} animate={inView ? { y: 0, opacity: 1 } : {}} transition={{ duration: 0.5 }} className='mb-6 text-5xl font-extrabold lg:text-6xl font-montserrat gradient-text'>Technology Stack</motion.h2>
-                <motion.p initial={{ y: 100, opacity: 0 }} animate={inView ? { y: 0, opacity: 1 } : {}} transition={{ duration: 0.7 }} className='font-medium text-xl lg:text-2xl text-accent max-w-[960px] mx-auto'>I are concerned about security and performance for my client. That&apos;s why I always keep updating and use best technologies in a product</motion.p>
+                <motion.h2 initial={{ y: 100, opacity: 0 }} animate={inView ? { y: 0, opacity: 1 } : {}} transition={{ duration: 0.5 }} className={styles.sectionTitle}>Technology Stack</motion.h2>
+                <motion.p initial={{ y: 100, opacity: 0 }} animate={inView ? { y: 0, opacity: 1 } : {}} transition={{ duration: 0.7 }} className={`${styles.sectionDescription} max-w-[960px] mx-auto`}>I are concerned about security and performance for my client. That&apos;s why I always keep updating and use best technologies in a product</motion.p>
             </div>
             <div className='flex items-center justify-center mt-12'>
-                <div className='flex flex-row gap-[3.125em] max-w-[54em] flex-wrap justify-center items-center'>
+                <div className='flex flex-row gap-[50px] max-w-[864px] flex-wrap justify-center items-center'>
                     {technologyStack.map((item, index) => (
-                        <div key={index.toString()} className='h-full relative'>
+                        <div key={index.toString()} className='relative h-full'>
                             <motion.div
-                                className="transition-all duration-150 ease-in-out"
+                                className="flex justify-center items-center w-[100px] h-[100px] transition-all duration-150 ease-in-out"
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={inView ? { opacity: 1, y: 0 } : {}}
                                 transition={{ duration: 0.8, delay: index * 0.1 }}
@@ -90,16 +91,26 @@ export default function SectionTechnologyStack() {
                                 whileTap={{ scale: 0.95 }}
                             >
                                 <Image
-                                    className='h-auto'
+                                    className='w-auto h-[100px]'
                                     src={item.image}
                                     width={0}
                                     height={100}
                                     alt={item.name}
-                                    style={{ width: '100%', height: '100px' }}
                                 />
-                                <Link href={item.officialSite} target="_blank" title={`Figure out about ${item.name}`}>
-                                    <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center text-white bg-black bg-opacity-80 opacity-0 hover:opacity-100 transition-all duration-300 rounded-xl">
-                                        <p className='text-center font-semibold'>
+                                <Link
+                                    href={{
+                                        pathname: item.officialSite,
+                                        query: {
+                                            utm_source: 'deri.my.id',
+                                            utm_medium: 'campaign',
+                                            utm_campaign: 'portfolio'
+                                        }
+                                    }}
+                                    target="_blank"
+                                    title={`Figure out about ${item.name}`}
+                                >
+                                    <div className="absolute top-0 left-0 flex items-center justify-center w-full h-full p-1 text-white transition-all duration-300 bg-opacity-50 opacity-0 gradient-bg hover:opacity-100 rounded-xl">
+                                        <p className='font-semibold text-center line-clamp-3'>
                                             {item.name}
                                         </p>
                                     </div>
@@ -109,6 +120,6 @@ export default function SectionTechnologyStack() {
                     ))}
                 </div>
             </div >
-        </div >
+        </section >
     )
 }
