@@ -15,5 +15,5 @@
 }
 
 .sectionDistance {
-  @apply mt-[10.75em] mb-[10.75em];
+  @apply my-[172px];
 }
