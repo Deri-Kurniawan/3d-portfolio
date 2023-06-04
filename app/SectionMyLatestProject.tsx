@@ -11,6 +11,7 @@ import { BsGithub } from 'react-icons/bs';
 import { IoMdOpen } from 'react-icons/io';
 import { BsInfoCircle } from 'react-icons/bs';
 import { FiFigma } from 'react-icons/fi';
+import styles from "./home.module.css";
 
 const tabs = [
     {
@@ -22,42 +23,42 @@ const tabs = [
                 name: 'Transform Portfolio Design to Web App',
                 image: assets.home.myLatestProject.projects.portfolioWebsite,
                 repositoryUrl: "https://github.com/deri-kurniawan/portfolio",
-                demoUrl: "https://portfolio.deri.my.id",
+                demoUrl: "https://deri.my.id",
             },
             {
                 slug: 'transform-portfolio-design-to-web-app',
                 name: 'Portfolio 2',
                 image: assets.home.myLatestProject.projects.portfolioWebsite,
                 repositoryUrl: "https://github.com/deri-kurniawan/portfolio",
-                demoUrl: "https://portfolio.deri.my.id",
+                demoUrl: "https://deri.my.id",
             },
             {
                 slug: 'transform-portfolio-design-to-web-app',
                 name: 'Portfolio 3',
                 image: assets.home.myLatestProject.projects.portfolioWebsite,
                 repositoryUrl: "https://github.com/deri-kurniawan/portfolio",
-                demoUrl: "https://portfolio.deri.my.id",
+                demoUrl: "https://deri.my.id",
             },
             {
                 slug: 'transform-portfolio-design-to-web-app',
                 name: 'Portfolio 4',
                 image: assets.home.myLatestProject.projects.portfolioWebsite,
                 repositoryUrl: "https://github.com/deri-kurniawan/portfolio",
-                demoUrl: "https://portfolio.deri.my.id",
+                demoUrl: "https://deri.my.id",
             },
             {
                 slug: 'transform-portfolio-design-to-web-app',
                 name: 'Portfolio 5',
                 image: assets.home.myLatestProject.projects.portfolioWebsite,
                 repositoryUrl: "https://github.com/deri-kurniawan/portfolio",
-                demoUrl: "https://portfolio.deri.my.id",
+                demoUrl: "https://deri.my.id",
             },
             {
                 slug: 'transform-portfolio-design-to-web-app',
                 name: 'Portfolio 6',
                 image: assets.home.myLatestProject.projects.portfolioWebsite,
                 repositoryUrl: "https://github.com/deri-kurniawan/portfolio",
-                demoUrl: "https://portfolio.deri.my.id",
+                demoUrl: "https://deri.my.id",
             },
         ]
     },
@@ -101,12 +102,12 @@ export default function SectionMyLatestProject() {
     }, [activeTab])
 
     return (
-        <div className='safe-x-padding mt-[10.75em] mb-[10.75em]' ref={ref}>
+        <section ref={ref} className={`safe-x-padding ${styles.sectionDistance}`} aria-label='My Latest Project Section'>
             <div className='text-center'>
-                <motion.h2 initial={{ y: 100, opacity: 0 }} animate={inView ? { y: 0, opacity: 1 } : {}} transition={{ duration: 0.5 }} className='mb-6 text-5xl font-extrabold lg:text-6xl font-montserrat gradient-text'>My Latest Project</motion.h2>
-                <motion.p initial={{ y: 100, opacity: 0 }} animate={inView ? { y: 0, opacity: 1 } : {}} transition={{ duration: 0.7 }} className='font-medium text-xl lg:text-2xl text-accent max-w-[706px] mx-auto'>Take a look at something I&apos;ve worked on, such as a case study, real project, and more</motion.p>
+                <motion.h2 initial={{ y: 100, opacity: 0 }} animate={inView ? { y: 0, opacity: 1 } : {}} transition={{ duration: 0.5 }} className={styles.sectionTitle}>My Latest Project</motion.h2>
+                <motion.p initial={{ y: 100, opacity: 0 }} animate={inView ? { y: 0, opacity: 1 } : {}} transition={{ duration: 0.7 }} className={`${styles.sectionDescription} max-w-[706px] mx-auto`}>Take a look at something I&apos;ve worked on, such as a case study, real project, and more</motion.p>
             </div>
-            <div className='mt-[3.125em] h-full'>
+            <div className='mt-[50px] h-full'>
                 <div className='flex flex-col items-center justify-center md:items-start md:flex-row gap-9'>
                     <div className='flex flex-row md:flex-col bg-gray p-[26px] rounded-[25px] gap-x-[26px] md:gap-x-0 gap-y-[26px]'>
                         {tabs.map((tab, index) => (
@@ -178,7 +179,19 @@ export default function SectionMyLatestProject() {
                                                         <p className="p-8 text-xl font-bold text-center transition-all duration-150 ease-in-out line-clamp-1">{item.name}</p>
                                                         <div className='flex flex-row gap-4 text-3xl'>
                                                             {item.repositoryUrl && (
-                                                                <Link className="p-4 transition-all duration-150 ease-in-out bg-gray rounded-2xl hover:text-white hover:bg-gradient-to-r hover:from-primary hover:to-secondary" href={item.repositoryUrl} target='_blank' title="Repository">
+                                                                <Link
+                                                                    className="p-4 transition-all duration-150 ease-in-out bg-gray rounded-2xl hover:text-white hover:bg-gradient-to-r hover:from-primary hover:to-secondary"
+                                                                    href={{
+                                                                        pathname: item.repositoryUrl,
+                                                                        query: {
+                                                                            utm_source: 'deri.my.id',
+                                                                            utm_medium: 'campaign',
+                                                                            utm_campaign: 'portfolio'
+                                                                        }
+                                                                    }}
+                                                                    target='_blank'
+                                                                    title="Repository"
+                                                                >
                                                                     {tabs[activeTab].name.toLowerCase() === "project" ? (
                                                                         <BsGithub />
                                                                     ) : (
@@ -187,7 +200,19 @@ export default function SectionMyLatestProject() {
                                                                 </Link>
                                                             )}
                                                             {item.demoUrl && (
-                                                                <Link className="p-4 transition-all duration-300 ease-in-out bg-gray rounded-2xl hover:text-white hover:bg-gradient-to-r hover:from-primary hover:to-secondary" href={item.demoUrl} target='_blank' title="Demo">
+                                                                <Link
+                                                                    className="p-4 transition-all duration-300 ease-in-out bg-gray rounded-2xl hover:text-white hover:bg-gradient-to-r hover:from-primary hover:to-secondary"
+                                                                    href={{
+                                                                        pathname: item.demoUrl,
+                                                                        query: {
+                                                                            utm_source: 'deri.my.id',
+                                                                            utm_medium: 'campaign',
+                                                                            utm_campaign: 'portfolio'
+                                                                        }
+                                                                    }}
+                                                                    target='_blank'
+                                                                    title="Demo"
+                                                                >
                                                                     <IoMdOpen />
                                                                 </Link>
                                                             )}
@@ -206,6 +231,6 @@ export default function SectionMyLatestProject() {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
