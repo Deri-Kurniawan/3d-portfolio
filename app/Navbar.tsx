@@ -5,6 +5,8 @@ import React, { useEffect, useState } from 'react'
 import BrandIcon from './BrandIcon';
 import { usePathname } from 'next/navigation';
 import Banner from './Banner';
+import { RxCaretRight } from 'react-icons/rx';
+import { BsFileEarmarkPerson } from 'react-icons/bs';
 
 const navlinks = [
     {
@@ -28,7 +30,6 @@ export default function Navbar(): JSX.Element {
 
     const pathname = usePathname();
 
-
     const toggleMenu = (): void => {
         setIsMenuOpen((prev) => !prev);
     };
@@ -39,7 +40,7 @@ export default function Navbar(): JSX.Element {
 
     useEffect(() => {
         const closeMenuOnResize = (): void => {
-            if (window.innerWidth > 1024) {
+            if (window.innerWidth >= 768) {
                 setIsMenuOpen(false);
             }
         };
@@ -65,7 +66,7 @@ export default function Navbar(): JSX.Element {
 
     return (
         <>
-            <nav className={`sticky top-0 z-50 w-screen bg-white md:relative safe-layout`} ref={navbarRef}>
+            <nav ref={navbarRef} className={`sticky top-0 z-50 w-screen bg-white md:relative safe-layout`}>
                 <Banner />
                 <div className='flex flex-row items-center justify-between py-6 border-b-2 border-b-gray safe-x-padding'>
                     <Link className='z-50' href="/" onClick={closeMenu} prefetch={false}>
@@ -108,22 +109,39 @@ export default function Navbar(): JSX.Element {
                 className={`${isMenuOpen ? "top-0" : "-translate-y-full"} fixed top-0 w-screen h-screen transition-all duration-500 ease-in-out z-40 bg-white`}
                 style={{ paddingTop: navbarRef.current ? `${navbarRef.current.offsetHeight}px` : '90px' }}
             >
-                <div className='flex flex-col items-center justify-between p-4 text-lg font-medium lg:hidden lg:gap-8'>
-                    <ul className='flex flex-col text-4xl font-bold text-center lg:gap-8 justify-evenly text-accent2'>
+                <div className='flex flex-col items-start justify-between p-4 text-lg font-medium lg:hidden lg:gap-8'>
+                    <ul className='w-full'>
                         {navlinks.map((link, index) => (
-                            <li key={index} className='flex w-screen'>
+                            <li key={index} className={`flex mb-2 rounded-lg`}>
                                 <Link
-                                    className={`flex-1 py-4 ${pathname === link.href ? 'text-accent' : ''}`}
+                                    className={`flex-1 py-4 safe-x-padding`}
                                     href={link.href}
                                     onClick={closeMenu}
                                 >
-                                    {link.name}
+                                    <div className="flex items-center justify-between">
+                                        <span className={`${pathname === link.href ? 'gradient-text' : 'text-accent'} text-2xl font-semibold`}>{link.name}</span>
+                                        <span className={`${pathname === link.href ? 'text-secondary' : ''} text-4xl`}>
+                                            <RxCaretRight />
+                                        </span>
+                                    </div>
                                 </Link>
                             </li>
                         ))}
-
+                        <li className="flex text-white rounded-lg gradient-bg">
+                            <a
+                                href="/"
+                                className="flex-1 py-4 safe-x-padding"
+                                download="Deri Kurniawan Resume"
+                            >
+                                <div className="flex items-center justify-between">
+                                    <span className='text-2xl font-semibold'>Resume</span>
+                                    <span className='text-4xl'>
+                                        <BsFileEarmarkPerson />
+                                    </span>
+                                </div>
+                            </a>
+                        </li>
                     </ul>
-                    <a className='px-12 py-4 my-4 text-4xl font-bold text-white gradient-btn rounded-xl' href="/" download="Deri Kurniawan Resume">Resume</a>
                 </div>
             </div>
         </>
