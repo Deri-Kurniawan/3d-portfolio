@@ -5,6 +5,7 @@ import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { assets } from '@/constant/assets';
+import styles from './home.module.css';
 
 const AnimatedImage = motion(Image);
 
@@ -84,15 +85,15 @@ export default function SectionLetsConnect() {
     ]
 
     return (
-        <div className='safe-x-padding mt-[10.75em] mb-[10.75em] overflow-y-hidden lg:h-[1000px]' ref={ref}>
+        <section ref={ref} className={`safe-x-padding ${styles.sectionDistance} overflow-y-hidden lg:h-[1000px]`} aria-label="Let's Connect Section">
             <div className='text-center'>
-                <motion.h2 initial={{ y: 100, opacity: 0 }} animate={inView ? { y: 0, opacity: 1 } : {}} transition={{ duration: 0.5 }} className='mb-6 text-5xl font-extrabold lg:text-6xl font-montserrat gradient-text'>Let&apos;s Connect</motion.h2>
-                <motion.p initial={{ y: 100, opacity: 0 }} animate={inView ? { y: 0, opacity: 1 } : {}} transition={{ duration: 0.7 }} className='font-medium text-xl lg:text-2xl text-accent max-w-[730px] mx-auto'>Do you have any questions or a project in mind? Let&apos;s connect! I am here to help and excited to hear from you. You can also take a look at my work.</motion.p>
+                <motion.h2 initial={{ y: 100, opacity: 0 }} animate={inView ? { y: 0, opacity: 1 } : {}} transition={{ duration: 0.5 }} className={styles.sectionTitle}>Let&apos;s Connect</motion.h2>
+                <motion.p initial={{ y: 100, opacity: 0 }} animate={inView ? { y: 0, opacity: 1 } : {}} transition={{ duration: 0.7 }} className={`${styles.sectionDescription} max-w-[730px] mx-auto`}>Do you have any questions or a project in mind? Let&apos;s connect! I am here to help and excited to hear from you. You can also take a look at my work.</motion.p>
             </div>
             <div className='h-full mt-4'>
                 <div className='relative flex flex-col items-center justify-center'>
                     <div className="hidden lg:block absolute animate-ping -z-[2]">
-                        <motion.div initial={{ scale: 0.8, opacity: 0 }} animate={inView ? { scale: 1, opacity: 1 } : {}} transition={{ duration: .5, delay: 1 }} className="gradient-bg h-96 w-96 rounded-full"></motion.div>
+                        <motion.div initial={{ scale: 0.8, opacity: 0 }} animate={inView ? { scale: 1, opacity: 1 } : {}} transition={{ duration: .5, delay: 1 }} className="rounded-full gradient-bg h-96 w-96"></motion.div>
                     </div>
                     <AnimatedImage
                         initial={{ y: 50, opacity: 0 }}
@@ -108,7 +109,7 @@ export default function SectionLetsConnect() {
                     {socialMediaLinks.map((socialMediaLink, index) => (
                         <AnimatedImage key={index.toString()} {...socialMediaLink} />
                     ))}
-                    <div className='lg:hidden flex flex-row gap-3 flex-wrap justify-center items-center mt-4'>
+                    <div className='flex flex-row flex-wrap items-center justify-center gap-3 mt-4 lg:hidden'>
                         <AnimatedImage initial={{ y: 50, opacity: 0 }} animate={inView ? { y: 0, opacity: 1 } : {}} transition={{ duration: 0.5, delay: 0.4 }} className="z-[1] hover:cursor-pointer w-[100px] h-[100px]" src={assets.home.letsConnect.linkedin} alt='' width={100} height={100} tabIndex={0} onClick={() => window.open('https://linkedin.com/in/deri-kurniawan', '_blank')} />
                         <AnimatedImage initial={{ y: -50, opacity: 0 }} animate={inView ? { y: 0, opacity: 1 } : {}} transition={{ duration: 0.5, delay: 0.8 }} className="z-[1] hover:cursor-pointer w-[100px] h-[100px]" src={assets.home.letsConnect.dribble} alt='' width={100} height={100} tabIndex={0} onClick={() => window.open('https://dribbble.com/deri-kurniawan', '_blank')} />
                         <AnimatedImage initial={{ y: 100, opacity: 0 }} animate={inView ? { y: 0, opacity: 1 } : {}} transition={{ duration: 0.5, delay: 0 }} className="z-[1] hover:cursor-pointer w-[100px] h-[100px]" src={assets.home.letsConnect.gmail} alt='' width={100} height={100} tabIndex={0} onClick={() => window.open('mailto:deri.netuchi@gmail.com', "_self")} />
@@ -117,6 +118,6 @@ export default function SectionLetsConnect() {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
