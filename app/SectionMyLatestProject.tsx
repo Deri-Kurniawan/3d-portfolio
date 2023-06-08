@@ -19,46 +19,46 @@ const tabs = [
         image: assets.home.myLatestProject.suitcase,
         data: [
             {
-                slug: 'transform-portfolio-design-to-web-app',
-                name: 'Transform Portfolio Design to Web App',
+                slug: 'transform-portfolio-design-to-web-app-1',
+                title: 'Transform Portfolio Design to Web App',
                 image: assets.home.myLatestProject.projects.portfolioWebsite,
                 repositoryUrl: "https://github.com/deri-kurniawan/portfolio",
-                demoUrl: "https://deri.my.id",
+                demoUrl: "https://portfolio.deri.my.id",
             },
             {
-                slug: 'transform-portfolio-design-to-web-app',
-                name: 'Portfolio 2',
+                slug: 'transform-portfolio-design-to-web-app-2',
+                title: 'Portfolio 2',
                 image: assets.home.myLatestProject.projects.portfolioWebsite,
                 repositoryUrl: "https://github.com/deri-kurniawan/portfolio",
-                demoUrl: "https://deri.my.id",
+                demoUrl: "https://portfolio.deri.my.id",
             },
             {
-                slug: 'transform-portfolio-design-to-web-app',
-                name: 'Portfolio 3',
+                slug: 'transform-portfolio-design-to-web-app-3',
+                title: 'Portfolio 3',
                 image: assets.home.myLatestProject.projects.portfolioWebsite,
                 repositoryUrl: "https://github.com/deri-kurniawan/portfolio",
-                demoUrl: "https://deri.my.id",
+                demoUrl: "https://portfolio.deri.my.id",
             },
             {
-                slug: 'transform-portfolio-design-to-web-app',
-                name: 'Portfolio 4',
+                slug: 'transform-portfolio-design-to-web-app-4',
+                title: 'Portfolio 4',
                 image: assets.home.myLatestProject.projects.portfolioWebsite,
                 repositoryUrl: "https://github.com/deri-kurniawan/portfolio",
-                demoUrl: "https://deri.my.id",
+                demoUrl: "https://portfolio.deri.my.id",
             },
             {
-                slug: 'transform-portfolio-design-to-web-app',
-                name: 'Portfolio 5',
+                slug: 'transform-portfolio-design-to-web-app-5',
+                title: 'Portfolio 5',
                 image: assets.home.myLatestProject.projects.portfolioWebsite,
                 repositoryUrl: "https://github.com/deri-kurniawan/portfolio",
-                demoUrl: "https://deri.my.id",
+                demoUrl: "https://portfolio.deri.my.id",
             },
             {
-                slug: 'transform-portfolio-design-to-web-app',
-                name: 'Portfolio 6',
+                slug: 'transform-portfolio-design-to-web-app-6',
+                title: 'Portfolio 6',
                 image: assets.home.myLatestProject.projects.portfolioWebsite,
                 repositoryUrl: "https://github.com/deri-kurniawan/portfolio",
-                demoUrl: "https://deri.my.id",
+                demoUrl: "https://portfolio.deri.my.id",
             },
         ]
     },
@@ -68,7 +68,7 @@ const tabs = [
         data: [
             {
                 slug: 'portfolio-web-design',
-                name: 'Portfolio Web Design',
+                title: 'Portfolio Web Design',
                 image: assets.home.myLatestProject.projects.portfolioWebsite,
                 repositoryUrl: "https://www.figma.com/file/TYBBBbA5cvBN4QU70hNxvr/DK-PORTFOLIO?type=design&node-id=49%3A26&t=3Bwr9eEa8OLH9C0R-1",
                 demoUrl: "https://www.figma.com/proto/TYBBBbA5cvBN4QU70hNxvr/DK-PORTFOLIO?page-id=0%3A1&type=design&node-id=49-26&viewport=-226%2C241%2C0.42&scaling=min-zoom",
@@ -176,7 +176,7 @@ export default function SectionMyLatestProject() {
                                                 </div>
                                                 <div className='absolute top-0 bottom-0 left-0 right-0 hidden transition-all duration-300 gap-y-2 group-hover:block bg-gray/10 backdrop-blur-sm rounded-2xl'>
                                                     <div className='flex flex-col items-center justify-center w-full h-full select-none lg:select-auto'>
-                                                        <p className="p-8 text-xl font-bold text-center transition-all duration-150 ease-in-out line-clamp-1">{item.name}</p>
+                                                        <p className="p-8 text-xl font-bold text-center transition-all duration-150 ease-in-out line-clamp-1">{item.title}</p>
                                                         <div className='flex flex-row gap-4 text-3xl'>
                                                             {item.repositoryUrl && (
                                                                 <Link
@@ -216,7 +216,7 @@ export default function SectionMyLatestProject() {
                                                                     <IoMdOpen />
                                                                 </Link>
                                                             )}
-                                                            <Link className="p-4 transition-all duration-300 ease-in-out bg-gray rounded-2xl hover:text-white hover:bg-gradient-to-r hover:from-primary hover:to-secondary" href={`/project/${item.slug}`} title={`Detail of ${item.name}`}>
+                                                            <Link className="p-4 transition-all duration-300 ease-in-out bg-gray rounded-2xl hover:text-white hover:bg-gradient-to-r hover:from-primary hover:to-secondary" href={`/project/${item.slug}`} title={`Detail of ${item.title}`}>
                                                                 <BsInfoCircle />
                                                             </Link>
                                                         </div>
