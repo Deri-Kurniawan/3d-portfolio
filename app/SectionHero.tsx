@@ -70,27 +70,18 @@ export default function SectionHero(): JSX.Element {
                 {/* first */}
                 <div className='flex flex-col items-center justify-center order-2 xl:items-start xl:order-1'>
                     <motion.p
-                        initial={{ y: 100, opacity: 0 }}
-                        animate={inView ? { y: 0, opacity: 1 } : {}}
-                        transition={{ duration: 0.5 }}
                         className='font-montserrat font-bold text-2xl md:text-[28px] lg:text-[32px] text-accent mb-3 text-center xl:text-left'
                         aria-label="Welcome to Deri's Portfolio"
                     >
                         Welcome to Deri&apos;s Portfolio
                     </motion.p>
                     <motion.h2
-                        initial={{ y: 100, opacity: 0 }}
-                        animate={inView ? { y: 0, opacity: 1 } : {}}
-                        transition={{ duration: 0.7 }}
                         className='font-montserrat font-extrabold text-5xl md:text-[64px] md:leading-[56px] lg:text-[66px] lg:leading-[88px] gradient-text mb-6 text-center xl:text-left'
                         aria-label="Full Stack Web Developer"
                     >
                         Full Stack Web Developer
                     </motion.h2>
                     <motion.p
-                        initial={{ y: 100, opacity: 0 }}
-                        animate={inView ? { y: 0, opacity: 1 } : {}}
-                        transition={{ duration: 0.9 }}
                         className='text-base font-medium text-center md:text-xl lg:text-2xl text-accent xl:text-left'
                         aria-label="I'm Deri Kurniawan. A passionate Full Stack Web Developer based in Sukabumi Regency, West Java, Indonesia."
                     >
@@ -102,11 +93,7 @@ export default function SectionHero(): JSX.Element {
                     <div className='relative flex items-center justify-center order-1 xl:justify-end'>
                         <div className='relative'>
                             <motion.div
-                                initial={{ opacity: 0, scale: 0 }}
-                                animate={inView ? { opacity: 1, scale: 1 } : {}}
-                                transition={{ duration: 0.8 }}
                                 className='relative w-[280px] h-[280px] md:w-[330px] md:h-[330px] lg:w-[480px] lg:h-[480px] bg-gray rounded-3xl overflow-clip'
-                                aria-hidden={!inView}
                             >
                                 <AnimatedImage
                                     className='w-[280px] h-[280px] md:w-[330px] md:h-[330px] lg:w-[480px] lg:h-[480px] absolute top-0 bottom-0 left-0 right-0'
@@ -115,7 +102,7 @@ export default function SectionHero(): JSX.Element {
                                     height={480}
                                     alt=''
                                     priority
-                                    initial={{ opacity: 0, y: 800 }}
+                                    initial={{ opacity: 0.5, y: 500 }}
                                     animate={inView ? { opacity: 1, y: 0 } : {}}
                                     transition={{ delay: 0.2, duration: 1 }}
                                     aria-label="Deri's Avatar"
