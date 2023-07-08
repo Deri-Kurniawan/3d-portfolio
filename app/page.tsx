@@ -1,4 +1,4 @@
-import Footer from "./Footer";
+import Footer from "../components/Footer";
 import SectionHero from "./SectionHero";
 import SectionLetsConnect from "./SectionLetsConnect";
 import SectionMyLatestProject from "./SectionMyLatestProject";

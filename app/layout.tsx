@@ -1,6 +1,6 @@
 import { montserrat, poppins } from '@/constant/font'
 import './globals.css'
-import Navbar from './Navbar'
+import Navbar from '../components/Navbar'
 
 export const metadata = {
   title: "Home - Portfolio",
