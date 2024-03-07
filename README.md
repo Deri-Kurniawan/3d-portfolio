@@ -1,12 +1,36 @@
-# Deri Kurniawan's 3D Portfolio
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-[![Deri-Kurniawan - 3D Portfolio](https://img.shields.io/static/v1?label=Deri-Kurniawan&message=3d-portfolio&color=blue&logo=github)](https://github.com/Deri-Kurniawan/3d-portfolio "Go to GitHub repo") [![stars - 3D Portfolio](https://img.shields.io/github/stars/Deri-Kurniawan/3d-portfolio?style=social)](https://github.com/Deri-Kurniawan/3d-portfolio)
-[![forks - 3D Portfolio](https://img.shields.io/github/forks/Deri-Kurniawan/3d-portfolio?style=social)](https://github.com/Deri-Kurniawan/3d-portfolio) [![License](https://img.shields.io/badge/License-MIT-blue)](#license) [![issues - 3D Portfolio](https://img.shields.io/github/issues/Deri-Kurniawan/3d-portfolio)](https://github.com/Deri-Kurniawan/3d-portfolio/issues)
+## Getting Started
 
-This portfolio is based on my designs in [Dribble - Deri Kurniawan](https://dribbble.com/shots/21642242-3D-Theme-Portfolio-Website?utm_source=Clipboard_Shot&utm_campaign=deri-kurniawan&utm_content=3D%20Theme%20Portfolio%20Website&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=deri-kurniawan&utm_content=3D%20Theme%20Portfolio%20Website&utm_medium=Social_Share). You can also find the figma design there.
+First, run the development server:
 
-This App Deployed at Vercel - [https://3d-portfolio.deri.my.id](https://3d-portfolio.deri.my.id)
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-## License
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Released under [MIT](/LICENSE) by [@Deri-Kurniawan](https://github.com/Deri-Kurniawan).
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
