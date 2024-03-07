@@ -1,0 +1,25 @@
+/* Components */
+.__gradientText {
+  @apply text-transparent bg-gradient-to-r from-primary to-secondary bg-clip-text;
+}
+/* End of components */
+
+.sectionTitle {
+  @apply mb-6 text-4xl font-extrabold md:text-5xl lg:text-6xl font-montserrat __gradientText;
+}
+
+.sectionDescription {
+  @apply text-base font-medium md:text-xl lg:text-2xl text-accent;
+}
+
+.creatorQuotes {
+  @apply font-medium text-base md:text-xl leading-[38px] lg:text-2xl text-accent max-w-[933px] mx-auto text-justify;
+}
+
+.creatorQuotesName {
+  @apply font-medium text-6xl lg:text-7xl text-accent text-center mt-[20px];
+}
+
+.sectionDistance {
+  @apply my-[172px];
+}

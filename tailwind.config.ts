@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+const { fontFamily } = require("tailwindcss/defaultTheme");
 
 const config: Config = {
   content: [
@@ -8,11 +9,17 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        primary: "#A293FF",
+        secondary: "#00F0FF",
+        accent: "#000000",
+        accent2: "#8E8E8E",
+        gray: "#F1F1F1",
       },
+    },
+    fontFamily: {
+      montserrat: ["var(--font-montserrat)", ...fontFamily.sans],
+      poppins: ["var(--font-poppins)", ...fontFamily.sans],
     },
   },
   plugins: [],
