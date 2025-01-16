@@ -7,6 +7,9 @@ This portfolio is based on my designs in [Dribble - Deri Kurniawan](https://drib
 
 This App Deployed at Vercel - [https://3d-portfolio.deri.my.id](https://3d-portfolio.deri.my.id)
 
+## Assets
+Create your own 3d Character at [peeps.ui8.net](https://peeps.ui8.net/)
+
 ## License
 
 Released under [MIT](/LICENSE) by [@Deri-Kurniawan](https://github.com/Deri-Kurniawan).
