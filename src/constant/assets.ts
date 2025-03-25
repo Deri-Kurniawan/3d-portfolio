@@ -1,0 +1,50 @@
+export const assets = {
+  home: {
+    hero: {
+      avatarSmile: require("@/assets/images/home/hero/avatar-smile.webp"),
+      dribble: require("@/assets/images/home/hero/dribble.webp"),
+      github: require("@/assets/images/home/hero/github.webp"),
+      instagram: require("@/assets/images/home/hero/instagram.webp"),
+      linkedin: require("@/assets/images/home/hero/linkedin.webp"),
+      quadrilateral: require("@/assets/images/home/hero/quadrilateral.webp"),
+      triangle: require("@/assets/images/home/hero/triangle.webp"),
+      twistedTorus: require("@/assets/images/home/hero/twisted-torus.webp"),
+      zigZag: require("@/assets/images/home/hero/zig-zag.webp"),
+    },
+    letsConnect: {
+      avatarBigSmile: require("@/assets/images/home/letsConnect/avatar-big-smile.webp"),
+      dribble: require("@/assets/images/home/letsConnect/dribble.webp"),
+      github: require("@/assets/images/home/letsConnect/github.webp"),
+      gmail: require("@/assets/images/home/letsConnect/gmail.webp"),
+      instagram: require("@/assets/images/home/letsConnect/instagram.webp"),
+      linkedin: require("@/assets/images/home/letsConnect/linkedin.webp"),
+    },
+    myLatestProject: {
+      figma: require("@/assets/images/home/myLatestProject/figma.webp"),
+      rocket: require("@/assets/images/home/myLatestProject/rocket.webp"),
+      suitcase: require("@/assets/images/home/myLatestProject/suitcase.webp"),
+      projects: {
+        portfolioWebsite: require("@/assets/images/home/myLatestProject/projects/portfolio-website.webp"),
+      },
+    },
+    quote: {
+      bulb: require("@/assets/images/home/quote/bulb.webp"),
+      heart: require("@/assets/images/home/quote/heart.webp"),
+      paintKit: require("@/assets/images/home/quote/paint-kit.webp"),
+      teaCup: require("@/assets/images/home/quote/tea-cup.webp"),
+    },
+    technologyStack: {
+      expo: require("@/assets/images/home/technologyStack/expo.webp"),
+      expressJs: require("@/assets/images/home/technologyStack/express-js.webp"),
+      javascript: require("@/assets/images/home/technologyStack/javascript.webp"),
+      laravel: require("@/assets/images/home/technologyStack/laravel.webp"),
+      nextJs: require("@/assets/images/home/technologyStack/next-js.webp"),
+      planetScale: require("@/assets/images/home/technologyStack/planet-scale.webp"),
+      prisma: require("@/assets/images/home/technologyStack/prisma.webp"),
+      reactJs: require("@/assets/images/home/technologyStack/react-js.webp"),
+      reactNative: require("@/assets/images/home/technologyStack/react-native.webp"),
+      tailwindCss: require("@/assets/images/home/technologyStack/tailwindcss.webp"),
+      typescript: require("@/assets/images/home/technologyStack/typescript.webp"),
+    },
+  },
+};
