@@ -1,6 +1,28 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: #A293FF;
+  --color-secondary: #00F0FF;
+  --color-accent: #000000;
+  --color-accent2: #8E8E8E;
+  --color-gray: #F1F1F1;
+  --font-poppins: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-montserrat: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
 
 @layer base {
   html {
@@ -24,19 +46,19 @@
   }
 
   .safe-x-padding {
-    @apply px-[20px] md:px-[50px] lg:px-[120px];
+    @apply px-5 md:px-[50px] lg:px-[120px];
   }
 
   .gradient-text {
-    @apply text-transparent bg-gradient-to-r from-primary to-secondary bg-clip-text;
+    @apply text-transparent bg-linear-to-r from-primary to-secondary bg-clip-text;
   }
 
   .gradient-bg {
-    @apply bg-gradient-to-r from-primary to-secondary;
+    @apply bg-linear-to-r from-primary to-secondary;
   }
 
   .gradient-btn {
-    @apply bg-gradient-to-r from-primary to-secondary;
+    @apply bg-linear-to-r from-primary to-secondary;
     position: relative;
     color: #fff;
     border: none;
@@ -57,7 +79,7 @@
   transform: scale(0.9);
 }
 .gradient-btn::before {
-  @apply bg-gradient-to-l from-secondary to-primary rounded-lg absolute -z-[1] top-0 -left-full w-full h-full transition-all duration-500 ease-in-out;
+  @apply bg-linear-to-l from-secondary to-primary rounded-lg absolute -z-1 top-0 -left-full w-full h-full transition-all duration-500 ease-in-out;
   content: "";
 }
 .gradient-btn:hover::before {
@@ -67,7 +89,7 @@
 
 /* Start of Mobile & Tablet Hamburger */
 .hamburger svg {
-  @apply w-[40px];
+  @apply w-10;
   transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hamburger svg > path.line {
@@ -82,10 +104,17 @@
   stroke-dasharray: 12 63;
 }
 .hamburger input:checked + svg {
-  @apply -rotate-[45deg];
+  @apply -rotate-45;
 }
 .hamburger input:checked + svg .line-top-bottom {
   stroke-dasharray: 20 300;
   stroke-dashoffset: -32.42;
 }
 /* End of Mobile & Tablet Hamburger */
+
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-poppins);
+}
