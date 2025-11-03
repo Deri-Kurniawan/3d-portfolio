@@ -3,53 +3,53 @@ import React from "react";
 export default function BrandIcon() {
   return (
     <>
-      <style jsx>{`
-            #brand path {
-              @apply transition-all duration-500 ease-in-out;
-              stroke-dasharray: 500;
-              stroke-dashoffset: 500;
-              animation: animate 8s ease-in-out forwards infinite;
-            }
+      <style>{`
+        #brand path {
+          @apply transition-all duration-500 ease-in-out;
+          stroke-dasharray: 500;
+          stroke-dashoffset: 500;
+          animation: animate 8s ease-in-out forwards infinite;
+        }
 
-            @keyframes animate {
-              0% {
-                stroke-dashoffset: 0;
-                stroke-dasharray: 500;
-              }
-              50% {
-                stroke-dashoffset: 500;
-                stroke-dasharray: 100;
-              }
-              100% {
-                stroke-dashoffset: 0;
-                stroke-dasharray: 500;
-              }
-            }
+        @keyframes animate {
+          0% {
+            stroke-dashoffset: 0;
+            stroke-dasharray: 500;
+          }
+          50% {
+            stroke-dashoffset: 500;
+            stroke-dasharray: 100;
+          }
+          100% {
+            stroke-dashoffset: 0;
+            stroke-dasharray: 500;
+          }
+        }
 
-            #brand stop:nth-child(1) {
-              animation: gradient 4s ease infinite alternate;
-            }
+        #brand stop:nth-child(1) {
+          animation: gradient 4s ease infinite alternate;
+        }
 
-            #brand stop:nth-child(2) {
-              animation: gradient 4s ease infinite;
-            }
+        #brand stop:nth-child(2) {
+          animation: gradient 4s ease infinite;
+        }
 
-            @keyframes gradient {
-              0% {
-                stop-color: #A293FF;
-              }
-              50% {
-                stop-color: #00F0FF;
-              }
-              100% {
-                stop-color: #A293FF;
-              }
-            }
+        @keyframes gradient {
+          0% {
+            stop-color: #a293ff;
+          }
+          50% {
+            stop-color: #00f0ff;
+          }
+          100% {
+            stop-color: #a293ff;
+          }
+        }
 
-            #brand:hover > * {
-                animation-play-state: paused;
-            }
-            `}</style>
+        #brand:hover > * {
+          animation-play-state: paused;
+        }
+      `}</style>
 
       <svg
         xmlns="http://www.w3.org/2000/svg"
