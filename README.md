@@ -35,7 +35,7 @@ This portfolio is based on my designs in [Dribbble - Deri Kurniawan](https://dri
 
 ## Deploy your own portfolio
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FDeri-Kurniawan%2F3d-portfolio)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FDeri-Kurniawan%2F3d-portfolio&env=NEXT_PUBLIC_APP_URL)
 
 ## Assets
 
