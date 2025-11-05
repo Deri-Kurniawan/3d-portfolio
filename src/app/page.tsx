@@ -1,9 +1,9 @@
-import Footer from "../components/Footer";
-import SectionHero from "./_components/SectionHero";
-import SectionLetsConnect from "./_components/SectionLetsConnect";
-import SectionMyLatestProject from "./_components/SectionMyLatestProject";
-import SectionQuote from "./_components/SectionQuote";
-import SectionTechnologyStack from "./_components/SectionTechnologyStack";
+import Footer from "../components/footer";
+import HeroSection from "./_components/hero-section";
+import LetsConnectSection from "./_components/lets-connect-section";
+import MyLatestProjectSection from "./_components/my-latest-project-section";
+import QuoteSection from "./_components/quote-section";
+import TechStackSection from "./_components/tech-stack-section";
 
 export const metadata = {
   title: "Home - Portfolio",
@@ -12,12 +12,12 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div className="safe-layout">
-      <SectionHero />
-      <SectionTechnologyStack />
-      <SectionMyLatestProject />
-      <SectionLetsConnect />
-      <SectionQuote />
+    <div className="dk-safe-layout">
+      <HeroSection />
+      <TechStackSection />
+      <MyLatestProjectSection />
+      <LetsConnectSection />
+      <QuoteSection />
       <Footer />
     </div>
   );

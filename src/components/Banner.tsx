@@ -1,8 +1,8 @@
-import React from "react";
+import { useState } from "react";
 import { GrFormClose } from "react-icons/gr";
 
 export default function Banner() {
-  const [isBannerOpen, setIsBannerOpen] = React.useState<boolean>(true);
+  const [isBannerOpen, setIsBannerOpen] = useState<boolean>(true);
 
   return (
     <>
@@ -15,6 +15,7 @@ export default function Banner() {
               </p>
             </div>
             <button
+              type="button"
               className="p-2 mr-5 text-2xl md:p-4"
               onClick={() => setIsBannerOpen(false)}
             >

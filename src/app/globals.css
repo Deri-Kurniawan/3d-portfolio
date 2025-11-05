@@ -8,13 +8,14 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-primary: #A293FF;
-  --color-secondary: #00F0FF;
+  --color-primary: #a293ff;
+  --color-secondary: #00f0ff;
   --color-accent: #000000;
-  --color-accent2: #8E8E8E;
-  --color-gray: #F1F1F1;
+  --color-accent2: #8e8e8e;
+  --color-gray: #f1f1f1;
   --font-poppins: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
-  --font-montserrat: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  --font-montserrat:
+    var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -40,24 +41,24 @@
 }
 
 @layer utilities {
-  .safe-layout {
-    max-width: 1440px !important;
-    margin: 0 auto !important;
+  .dk-safe-layout {
+    max-width: 1440px;
+    margin: 0 auto;
   }
 
-  .safe-x-padding {
+  .dk-safe-x-padding {
     @apply px-5 md:px-[50px] lg:px-[120px];
   }
 
-  .gradient-text {
+  .dk-gradient-text {
     @apply text-transparent bg-linear-to-r from-primary to-secondary bg-clip-text;
   }
 
-  .gradient-bg {
+  .dk-gradient-bg {
     @apply bg-linear-to-r from-primary to-secondary;
   }
 
-  .gradient-btn {
+  .dk-gradient-btn {
     @apply bg-linear-to-r from-primary to-secondary;
     position: relative;
     color: #fff;
@@ -67,22 +68,34 @@
     transition: all 0.3s ease-in-out;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
   }
+
+  .dk-section-title {
+    @apply mb-6 text-4xl font-extrabold md:text-5xl lg:text-6xl font-montserrat text-transparent bg-linear-to-r from-primary to-secondary bg-clip-text;
+  }
+
+  .dk-section-description {
+    @apply text-base font-medium md:text-xl lg:text-2xl text-accent;
+  }
+
+  .dk-section-distance {
+    @apply my-[172px];
+  }
 }
 
 /* Start of gradient button */
-.gradient-btn:hover {
+.dk-gradient-btn:hover {
   transform: scale(1.05);
   color: #fff;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
-.gradient-btn:active {
+.dk-gradient-btn:active {
   transform: scale(0.9);
 }
-.gradient-btn::before {
+.dk-gradient-btn::before {
   @apply bg-linear-to-l from-secondary to-primary rounded-lg absolute -z-1 top-0 -left-full w-full h-full transition-all duration-500 ease-in-out;
   content: "";
 }
-.gradient-btn:hover::before {
+.dk-gradient-btn:hover::before {
   left: 0;
 }
 /* End of gradient button */
@@ -97,7 +110,8 @@
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 3;
-  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+  transition:
+    stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
     stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hamburger svg > path.line-top-bottom {
@@ -111,7 +125,6 @@
   stroke-dashoffset: -32.42;
 }
 /* End of Mobile & Tablet Hamburger */
-
 
 body {
   background: var(--background);

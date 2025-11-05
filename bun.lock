@@ -4,12 +4,15 @@
     "": {
       "name": "3d-portfolio",
       "dependencies": {
+        "@t3-oss/env-nextjs": "^0.13.8",
         "framer-motion": "^12.23.24",
+        "motion": "^12.23.24",
         "next": "15.5.6",
         "react": "19.1.0",
         "react-dom": "19.1.0",
         "react-icons": "^5.5.0",
         "react-intersection-observer": "^10.0.0",
+        "zod": "^4.1.12",
       },
       "devDependencies": {
         "@biomejs/biome": "2.2.0",
@@ -121,6 +124,10 @@
 
     "@swc/helpers": ["@swc/helpers@0.5.15", "", { "dependencies": { "tslib": "^2.8.0" } }, "sha512-JQ5TuMi45Owi4/BIMAJBoSQoOJu12oOk/gADqlcUL9JEdHB8vyjUSsxqeNXnmXHjYKMi2WcYtezGEEhqUI/E2g=="],
 
+    "@t3-oss/env-core": ["@t3-oss/env-core@0.13.8", "", { "peerDependencies": { "arktype": "^2.1.0", "typescript": ">=5.0.0", "valibot": "^1.0.0-beta.7 || ^1.0.0", "zod": "^3.24.0 || ^4.0.0-beta.0" }, "optionalPeers": ["arktype", "typescript", "valibot", "zod"] }, "sha512-L1inmpzLQyYu4+Q1DyrXsGJYCXbtXjC4cICw1uAKv0ppYPQv656lhZPU91Qd1VS6SO/bou1/q5ufVzBGbNsUpw=="],
+
+    "@t3-oss/env-nextjs": ["@t3-oss/env-nextjs@0.13.8", "", { "dependencies": { "@t3-oss/env-core": "0.13.8" }, "peerDependencies": { "arktype": "^2.1.0", "typescript": ">=5.0.0", "valibot": "^1.0.0-beta.7 || ^1.0.0", "zod": "^3.24.0 || ^4.0.0-beta.0" }, "optionalPeers": ["arktype", "typescript", "valibot", "zod"] }, "sha512-QmTLnsdQJ8BiQad2W2nvV6oUpH4oMZMqnFEjhVpzU0h3sI9hn8zb8crjWJ1Amq453mGZs6A4v4ihIeBFDOrLeQ=="],
+
     "@tailwindcss/node": ["@tailwindcss/node@4.1.16", "", { "dependencies": { "@jridgewell/remapping": "^2.3.4", "enhanced-resolve": "^5.18.3", "jiti": "^2.6.1", "lightningcss": "1.30.2", "magic-string": "^0.30.19", "source-map-js": "^1.2.1", "tailwindcss": "4.1.16" } }, "sha512-BX5iaSsloNuvKNHRN3k2RcCuTEgASTo77mofW0vmeHkfrDWaoFAFvNHpEgtu0eqyypcyiBkDWzSMxJhp3AUVcw=="],
 
     "@tailwindcss/oxide": ["@tailwindcss/oxide@4.1.16", "", { "optionalDependencies": { "@tailwindcss/oxide-android-arm64": "4.1.16", "@tailwindcss/oxide-darwin-arm64": "4.1.16", "@tailwindcss/oxide-darwin-x64": "4.1.16", "@tailwindcss/oxide-freebsd-x64": "4.1.16", "@tailwindcss/oxide-linux-arm-gnueabihf": "4.1.16", "@tailwindcss/oxide-linux-arm64-gnu": "4.1.16", "@tailwindcss/oxide-linux-arm64-musl": "4.1.16", "@tailwindcss/oxide-linux-x64-gnu": "4.1.16", "@tailwindcss/oxide-linux-x64-musl": "4.1.16", "@tailwindcss/oxide-wasm32-wasi": "4.1.16", "@tailwindcss/oxide-win32-arm64-msvc": "4.1.16", "@tailwindcss/oxide-win32-x64-msvc": "4.1.16" } }, "sha512-2OSv52FRuhdlgyOQqgtQHuCgXnS8nFSYRp2tJ+4WZXKgTxqPy7SMSls8c3mPT5pkZ17SBToGM5LHEJBO7miEdg=="],
@@ -199,6 +206,8 @@
 
     "magic-string": ["magic-string@0.30.21", "", { "dependencies": { "@jridgewell/sourcemap-codec": "^1.5.5" } }, "sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ=="],
 
+    "motion": ["motion@12.23.24", "", { "dependencies": { "framer-motion": "^12.23.24", "tslib": "^2.4.0" }, "peerDependencies": { "@emotion/is-prop-valid": "*", "react": "^18.0.0 || ^19.0.0", "react-dom": "^18.0.0 || ^19.0.0" }, "optionalPeers": ["@emotion/is-prop-valid", "react", "react-dom"] }, "sha512-Rc5E7oe2YZ72N//S3QXGzbnXgqNrTESv8KKxABR20q2FLch9gHLo0JLyYo2hZ238bZ9Gx6cWhj9VO0IgwbMjCw=="],
+
     "motion-dom": ["motion-dom@12.23.23", "", { "dependencies": { "motion-utils": "^12.23.6" } }, "sha512-n5yolOs0TQQBRUFImrRfs/+6X4p3Q4n1dUEqt/H58Vx7OW6RF+foWEgmTVDhIWJIMXOuNNL0apKH2S16en9eiA=="],
 
     "motion-utils": ["motion-utils@12.23.6", "", {}, "sha512-eAWoPgr4eFEOFfg2WjIsMoqJTW6Z8MTUCgn/GZ3VRpClWBdnbjryiA3ZSNLyxCTmCQx4RmYX6jX1iWHbenUPNQ=="],
@@ -238,6 +247,8 @@
     "typescript": ["typescript@5.9.3", "", { "bin": { "tsc": "bin/tsc", "tsserver": "bin/tsserver" } }, "sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw=="],
 
     "undici-types": ["undici-types@6.21.0", "", {}, "sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ=="],
+
+    "zod": ["zod@4.1.12", "", {}, "sha512-JInaHOamG8pt5+Ey8kGmdcAcg3OL9reK8ltczgHTAwNhMys/6ThXHityHxVV2p3fkw/c+MAvBHFVYHFZDmjMCQ=="],
 
     "@tailwindcss/oxide-wasm32-wasi/@emnapi/core": ["@emnapi/core@1.6.0", "", { "dependencies": { "@emnapi/wasi-threads": "1.1.0", "tslib": "^2.4.0" }, "bundled": true }, "sha512-zq/ay+9fNIJJtJiZxdTnXS20PllcYMX3OE23ESc4HK/bdYu3cOWYVhsOhVnXALfU/uqJIxn5NBPd9z4v+SfoSg=="],
 

@@ -7,15 +7,20 @@
     "build": "next build --turbopack",
     "start": "next start",
     "lint": "biome check",
-    "format": "biome format --write"
+    "lint:fix": "biome check --fix",
+    "format:check": "biome format --check",
+    "format:fix": "biome format --write"
   },
   "dependencies": {
+    "@t3-oss/env-nextjs": "^0.13.8",
     "framer-motion": "^12.23.24",
+    "motion": "^12.23.24",
     "next": "15.5.6",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-icons": "^5.5.0",
-    "react-intersection-observer": "^10.0.0"
+    "react-intersection-observer": "^10.0.0",
+    "zod": "^4.1.12"
   },
   "devDependencies": {
     "typescript": "^5",

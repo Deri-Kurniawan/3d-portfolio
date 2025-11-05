@@ -2,23 +2,14 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { JSX, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BsFileEarmarkPerson } from "react-icons/bs";
 import { RxCaretRight } from "react-icons/rx";
-import BrandIcon from "./BrandIcon";
+import { CONFIG } from "@/config";
+import { NAVIGATION_LINKS } from "@/constant/navigation";
+import BrandIcon from "./brand-icon";
 
-const navlinks = [
-  {
-    name: "Home",
-    href: "/",
-  },
-  {
-    name: "Project",
-    href: "/project",
-  },
-];
-
-export default function Navbar(): JSX.Element {
+const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const triggerMenuRef = React.useRef<HTMLInputElement>(null);
   const navbarRef = React.useRef<HTMLDivElement>(null);
@@ -63,20 +54,20 @@ export default function Navbar(): JSX.Element {
     <>
       <nav
         ref={navbarRef}
-        className={`sticky top-0 z-50 w-screen bg-white md:relative safe-layout`}
+        className={`sticky top-0 z-50 w-screen bg-white md:relative dk-safe-layout`}
       >
         {/* <Banner /> */}
-        <div className="flex flex-row items-center justify-between py-6 border-b-2 border-b-gray safe-x-padding">
+        <div className="flex flex-row items-center justify-between py-6 border-b-2 border-b-gray dk-safe-x-padding">
           <Link className="z-50" href="/" onClick={closeMenu} prefetch={false}>
-            <div className="w-[32px] h-[40px] lg:w-[42px] lg:h-[50px]">
+            <div className="w-8 h-10 lg:w-[42px] lg:h-[50px]">
               <BrandIcon />
             </div>
           </Link>
           {/* desktop menu */}
           <div className="flex-row items-center justify-between hidden text-lg font-bold md:flex md:gap-6 lg:gap-8">
             <ul className="flex flex-row md:gap-6 lg:gap-8 justify-evenly">
-              {navlinks.map((link, index) => (
-                <li key={index}>
+              {NAVIGATION_LINKS.map((link, _index) => (
+                <li key={link.name}>
                   <Link
                     className={`${
                       pathname === link.href ? "text-accent" : "text-accent2"
@@ -89,9 +80,9 @@ export default function Navbar(): JSX.Element {
               ))}
             </ul>
             <a
-              className="px-6 py-2 text-white gradient-btn rounded-xl"
-              href="/"
-              download="Deri Kurniawan Resume"
+              className="px-6 py-2 text-white dk-gradient-btn rounded-xl"
+              href={CONFIG.resume.downloadUrl}
+              download={CONFIG.resume.fileName}
             >
               Resume
             </a>
@@ -106,6 +97,7 @@ export default function Navbar(): JSX.Element {
                 onClick={toggleMenu}
               />
               <svg viewBox="0 0 32 32" id="hamburger">
+                <title>{isMenuOpen ? "Close Menu" : "Open Menu"}</title>
                 <path
                   className="line line-top-bottom"
                   d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
@@ -129,17 +121,19 @@ export default function Navbar(): JSX.Element {
       >
         <div className="flex flex-col items-start justify-between p-4 text-lg font-medium lg:hidden lg:gap-8">
           <ul className="w-full">
-            {navlinks.map((link, index) => (
-              <li key={index} className={`flex mb-2 rounded-lg`}>
+            {NAVIGATION_LINKS.map((link, _index) => (
+              <li key={link.name} className={`flex mb-2 rounded-lg`}>
                 <Link
-                  className={`flex-1 py-4 safe-x-padding`}
+                  className={`flex-1 py-4 dk-safe-x-padding`}
                   href={link.href}
                   onClick={closeMenu}
                 >
                   <div className="flex items-center justify-between">
                     <span
                       className={`${
-                        pathname === link.href ? "gradient-text" : "text-accent"
+                        pathname === link.href
+                          ? "dk-gradient-text"
+                          : "text-accent"
                       } text-2xl font-semibold`}
                     >
                       {link.name}
@@ -155,10 +149,10 @@ export default function Navbar(): JSX.Element {
                 </Link>
               </li>
             ))}
-            <li className="flex text-white rounded-lg gradient-bg">
+            <li className="flex text-white rounded-lg dk-gradient-bg">
               <a
                 href="/"
-                className="flex-1 py-4 safe-x-padding"
+                className="flex-1 py-4 dk-safe-x-padding"
                 download="Deri Kurniawan Resume"
               >
                 <div className="flex items-center justify-between">
@@ -174,4 +168,6 @@ export default function Navbar(): JSX.Element {
       </div>
     </>
   );
-}
+};
+
+export default Navbar;

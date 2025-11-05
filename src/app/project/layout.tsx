@@ -1,15 +1,11 @@
-import React from 'react'
-import Footer from '@components/Footer'
+import type { ReactNode } from "react";
+import Footer from "@/components/footer";
 
-export default function ProjectLayout({
-    children
-}: {
-    children: React.ReactNode
-}) {
-    return (
-        <>
-            {children}
-            <Footer />
-        </>
-    )
+export default function ProjectLayout({ children }: { children: ReactNode }) {
+  return (
+    <>
+      {children}
+      <Footer />
+    </>
+  );
 }
