@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     url: env.NEXT_PUBLIC_APP_URL,
     images: [
       {
-        url: `${env.NEXT_PUBLIC_APP_URL}/og-image.png`,
+        url: `${env.NEXT_PUBLIC_APP_URL}/og-image.webp`,
         width: 1200,
         height: 630,
         alt: "3D theme Portfolio",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
       " ",
       CONFIG.name.last,
     )}'s 3D theme Portfolio`,
-    images: [`${env.NEXT_PUBLIC_APP_URL}/og-image.png`],
+    images: [`${env.NEXT_PUBLIC_APP_URL}/og-image.webp`],
     card: "summary_large_image",
   },
 };
