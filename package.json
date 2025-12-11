@@ -2,6 +2,22 @@
   "name": "3d-portfolio",
   "version": "0.2.1",
   "private": true,
+  "description": "A beautiful 3D-themed portfolio template built with Next.js 15, Tailwind CSS 4, and Framer Motion",
+  "keywords": [
+    "portfolio",
+    "template",
+    "nextjs",
+    "tailwindcss",
+    "framer-motion",
+    "3d-themed",
+    "personal-website"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Deri-Kurniawan/3d-portfolio.git"
+  },
+  "author": "Deri Kurniawan",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
