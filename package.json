@@ -1,6 +1,6 @@
 {
   "name": "3d-portfolio",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "private": true,
   "description": "A beautiful 3D-themed portfolio template built with Next.js 15, Tailwind CSS 4, and Framer Motion",
   "keywords": [
